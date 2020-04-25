@@ -23,7 +23,7 @@ def consolidate_cart(cart)
       element_index = 0 
       while element_index < checkout.length do 
         if checkout[element_index][:item] == item[:item]
-          binding.pry
+          #binding.pry
           checkout[element_index][:count] += 1 
         end 
         element_index += 1 
