@@ -16,23 +16,23 @@ end
 
 def consolidate_cart(cart)
   checkout = []
-  index = 0 
-  while index < cart.length do 
-    item = find_item_by_name_in_collection(cart[index][:item], checkout)
+  row_index = 0 
+  while row_index < cart.length do 
+    item = find_item_by_name_in_collection(cart[row_index][:item], checkout)
     if item 
-      new_index = 0 
-      while new_index < checkout.length do 
-        if checkout[new_index][:item] == item[:item]
+      element_index = 0 
+      while element_index < checkout.length do 
+        if checkout[element_index][:item] == item[:item]
           binding.pry
-          checkout[new_index][:count] += 1 
+          checkout[element_index][:count] += 1 
         end 
-        new_index += 1 
+        element_index += 1 
       end 
     else
-      cart[index][:count] = 1 
-      checkout << cart[index]
+      cart[row_index][:count] = 1 
+      checkout << cart[row_index]
     end 
-    index += 1 
+    row_index += 1 
   end
   checkout
   end 
